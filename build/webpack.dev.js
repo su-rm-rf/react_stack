@@ -5,7 +5,13 @@ module.exports = env => {
   const dev_config = {
     mode: 'development',
     devServer: {
-      port: 8101
+      port: 8101,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:8602',
+          pathRewrite: { '^/api': '' }
+        }
+      }
     }
   }
 

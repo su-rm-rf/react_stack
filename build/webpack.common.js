@@ -25,17 +25,7 @@ module.exports = env => {
         },
         {
           test: /\.s?css$/,
-          use: ['style-loader', 'css-loader', 'postcss-loader',
-            // {
-            //   loader: 'postcss-loader',
-            //   options: {
-            //     postcssOptions: {
-            //       plugins: ['autoprefixer']
-            //     }
-            //   }
-            // }, 
-            'less-loader', 'sass-loader'
-          ],
+          use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader', 'sass-loader'],
         },
       ]
     },
