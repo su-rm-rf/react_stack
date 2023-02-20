@@ -1,27 +1,20 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 
-import axios from 'axios'
-import Home from './components/Home'
+import { RouterProvider } from 'react-router'
+import { NavLink, Outlet, Link } from 'react-router-dom'
 
-import './app.scss'
+import './css/app.scss'
 
 export default function App() {
-  const [msg, setMsg] = useState('')
-
-  useEffect(() => {
-    // axios.get('/api').then(res => {
-    //   setMsg(res.data)
-    // })
-
-    const getMsg = async () => {
-      const data = await axios.get('/api')
-      setMsg(data.data)
-    }
-    getMsg()
-  }, [])
-
-  return <div>
-    <Home />
-    <div>hello app {msg}.</div>
-  </div>
+  return (
+    <div className="app">
+      <nav className="nav_header">
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+      </nav>
+      <div className="body_content">
+        <Outlet />
+      </div>
+    </div>
+  )
 }

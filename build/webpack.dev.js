@@ -6,6 +6,7 @@ module.exports = env => {
     mode: 'development',
     devServer: {
       port: 8101,
+      historyApiFallback: true,
       proxy: {
         '/api': {
           target: 'http://localhost:8602',

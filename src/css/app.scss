@@ -1,0 +1,17 @@
+@import url('./reset.scss');
+
+.nav_header {
+  display: flex;
+  justify-content: space-around;
+  line-height: 40px;
+  a {
+    text-decoration: none;
+    &.active {
+      color: #f00;
+      text-decoration: underline;
+    }
+  }
+}
+.body_content {
+  transform: translate(20px);
+}

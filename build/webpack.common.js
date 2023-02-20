@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = env => {
   return {
-    entry: './src/main.tsx',
+    entry: './src/index.tsx',
     output: {
       path: path.resolve(__dirname, '../dist'),
       filename: '[name].bundle.js',
@@ -30,7 +30,10 @@ module.exports = env => {
       ]
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js']
+      extensions: ['.tsx', '.ts', '.js'],
+      alias: {
+        '@': path.join(__dirname, '../src')
+      }
     },
     plugins: [
       new HtmlWebpackPlugin({
