@@ -22,9 +22,9 @@ test('相等', () => {
 //   })
 // })
 
-// test('测试', () => {
-
-// })
+test('测试', () => {
+  expect( fetchData() ).toEqual('4.17.21')
+})
 
 afterAll(() => {
   // console.log('end')

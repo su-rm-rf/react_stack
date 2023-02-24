@@ -18,11 +18,11 @@ test
 
 # Webpack
 webpack webpack-cli webpack-dev-server webpack-merge
-typescript ts-loader
 html-webpack-plugin
 react react-dom react-router react-router-dom redux
+typescript
 @babel/core babel-loader @babel/preset-env @babel/plugin-transform-runtime @babel/preset-react @babel/preset-typescript
-style-loader css-loader less less-loader sass sass-loader postcss postcss-loader autoprefixer
+style-loader css-loader less less-loader sass sass-loader postcss postcss-loader postcss-preset-env
 
 # Vite
 

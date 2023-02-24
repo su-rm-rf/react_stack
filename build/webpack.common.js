@@ -25,7 +25,24 @@ module.exports = env => {
         },
         {
           test: /\.s?css$/,
-          use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader', 'sass-loader'],
+          use: ['style-loader', 'css-loader', 
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: [
+                    ['postcss-preset-env', {
+                      browsers: [
+                        'defaults',
+                        'last 7 versions'
+                      ]
+                    }]
+                  ]
+                }
+              }
+            },
+            'less-loader', 'sass-loader'
+          ],
         },
       ]
     },
