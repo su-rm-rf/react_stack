@@ -13,5 +13,14 @@
   }
 }
 .body_content {
-  transform: translate(20px 0);
+  transform: translate(20px);
+  .logo {
+    width: 100px;
+    height: 100px;
+    background: url('@/assets/logo.png');
+    background-size: contain;
+  }
+  .hehe {
+    color: #f0f;
+  }
 }

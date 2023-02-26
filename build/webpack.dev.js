@@ -4,6 +4,7 @@ const {merge} = require('webpack-merge')
 module.exports = env => {
   const dev_config = {
     mode: 'development',
+    devtool: 'eval-cheap-module-source-map',
     devServer: {
       port: 8101,
       historyApiFallback: true,
