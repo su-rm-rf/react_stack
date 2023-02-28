@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const pkg = require('../package.json')
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -12,7 +13,7 @@ module.exports = env => {
     output: {
       path: path.resolve(__dirname, '../dist'),
       filename: 'static/js/[name].[chunkhash:8].js',
-      publicPath: '/'
+      publicPath: pkg.basename
     },
     module: {
       rules: [
@@ -25,7 +26,7 @@ module.exports = env => {
             options: {
               presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
               plugins: [
-                '@babel/plugin-transform-runtime', 
+                '@babel/plugin-transform-runtime',
                 ['@babel/plugin-proposal-decorators', { legacy: true }],
               ]
             }
@@ -34,8 +35,8 @@ module.exports = env => {
         {
           test: /\.s?css$/,
           use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 
-            'css-loader', 
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
             {
               loader: 'postcss-loader',
               options: {
@@ -63,7 +64,7 @@ module.exports = env => {
       noParse: /jquery/
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js'],
+      extensions: ['.tsx', '.ts', '.js', '.json'],
       alias: {
         '@': path.join(__dirname, '../src')
       },
@@ -92,9 +93,9 @@ module.exports = env => {
         resourceRegExp: /local/,
         contextRegExp: /moment/
       }),
-      new ModuleFederalPlugin({
-        
-      })
+      // new ModuleFederalPlugin({
+
+      // })
     ],
     cache: {
       type: 'filesystem'

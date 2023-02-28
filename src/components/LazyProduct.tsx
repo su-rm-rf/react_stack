@@ -1,4 +1,5 @@
 import React, { lazy, Suspense, useState } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 const Product = lazy(() => import('@/components/LazyProduct'))
 
@@ -18,11 +19,23 @@ export default function LazyProduct() {
   }
 
   return (
-    <div className="product-wrap">
-      <div onClick={ getRes } className="red">lazy product...</div>
-      <div className="product-lazy">
-        { show && <Suspense fallback={ null }><Product /></Suspense> }
-        { show && <Suspense fallback={ null }><PreList /></Suspense> }
+    <div className='product-wrap'>
+      <div onClick={getRes} className='red'>
+        lazy product...
+      </div>
+      <Link to="abc">abc</Link>
+      <Outlet />
+      <div className='product-lazy'>
+        {show && (
+          <Suspense fallback={null}>
+            <Product />
+          </Suspense>
+        )}
+        {show && (
+          <Suspense fallback={null}>
+            <PreList />
+          </Suspense>
+        )}
       </div>
     </div>
   )

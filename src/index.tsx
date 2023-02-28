@@ -9,7 +9,7 @@ import router from '@/router'
 console.log(process.env.NODE_ENV)
 console.log(process.env.BASE_ENV)
 
-createRoot(document.querySelector('#root'))
+createRoot(document.querySelector('#root')!)
 .render(
   <Provider store={ store }>
     <RouterProvider router={ router } />

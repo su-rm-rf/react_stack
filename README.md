@@ -15,6 +15,7 @@ coverage
 dist
 public
 src
+  assets
   components
   router
   store
@@ -67,7 +68,7 @@ plugins
   copy-webpack-plugin 复制静态资源，将public文件夹复制到dist目录
   webpack.DefinePlugin 为业务代码注入环境变量
   webpack.IgnorePlugin 不去解析依赖库内部引用的某些内容，比如多语言包把某种语言过滤掉
-  Module
+  ModuleFederal 模块联邦
 devServer：开发环境配置
   用webpack-dev-server启动服务器辅助开发，用webpack-merge合并公共配置
   port：端口
@@ -96,7 +97,7 @@ scripts
   代码分割第三方包和公共模块：splitChunks 利用浏览器缓存
   tree-shaking清理未引用js：摇树、晃下来 production默认开启
   tree-shaking清理未引用css：用purgecss-webpack-plugin移除，glob-all检测范围
-  资源懒加载：首屏加载，只需公共资源+当前页面资源 Suspense+lazy
+  资源懒加载：首屏加载，只需公共资源+当前页面资源 loadable异步组件或Suspense+lazy
   资源预加载：延迟卡顿 <link rel="prefetch/preload" /> 提前加载js
   打包时生成gzip文件：打包时压缩比nginx请求时压缩更好 compression-webpack-plugin
   提前编译好模块：webpack.dllPlugin，生成一个json文件，用的时候查找并使用
@@ -138,17 +139,24 @@ ts-jest
 
 # 持续集成与部署
 
-# 代码格式化
-prettier
-lint-staged 构建代码检查工作流
-commitlint 规范commit的内容
+# 项目规范
+开发环境配置，多人协作、迭代、维护
+目录结构规范、代码格式规范、git提交规范
 
 # 代码规范
+## 代码格式规范和语法检测
+vscode
+editorconfig 统一编辑器配置 .editorconfig
+prettier 自动格式化代码 .prettierrc.js .根目录vscode/settings.json
 eslint
-stylelint
+lint-staged
 
-# git规范
-husky 防止使用git hooks的一些不好的commit或push
+## 代码git提交规范
+husky 监听githooks
+pre-commit
+commit-msg
+commitlint
+commitizen
 
 # npm仓库
 verdaccio 本地npm仓库
