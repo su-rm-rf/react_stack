@@ -26,10 +26,17 @@ export default function Home() {
     getMsg()
   }, [])
 
+  const postMsg = () => {
+    axios.post('/api', {
+      key1: 'value1'
+    })
+  }
+
   return (
     <div className="home">
       <div>
-        Home Page {msg}.. 
+        Home Page {msg}..
+        <button onClick={postMsg}>提交表单</button>
       </div>
       <div>
         <button onClick={() => dispatch(add())}>添加</button>
