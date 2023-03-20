@@ -1,0 +1,30 @@
+.todo-list {
+  ul {
+    li {
+      line-height: 36px;
+      display: flex;
+      justify-content: space-between;
+      &.completed {
+        background: #999;
+      }
+      &.deleted {
+        color: #777;
+      }
+      .text {
+        &.completed {
+          text-decoration: line-through;
+        }
+      }
+      .func {
+        i {
+          display: inline-block;
+          width: 70px;
+          text-align: center;
+          &.completed {
+            color: #f00;
+          }
+        }
+      }
+    }
+  }
+}

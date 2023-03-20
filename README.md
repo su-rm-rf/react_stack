@@ -1,3 +1,45 @@
+# 简洁的React前端项目脚手架
+
+# 技术栈
+构建：Webpack
+语言：TypeScript
+框架：React
+路由：React-Router
+状态管理：Redux
+CSS处理器：Less、Sass、PostCss
+网络处理：Axios
+测试：Jest
+
+# 项目结构
+build
+public
+src
+test
+package.json
+tsconfig.json
+
+# 命令
+npm init -y
+tsc --init
+pnpm i <pkg>
+
+# 开发依赖
+webpack webpack-cli webpack-merge webpack-dev-server
+html-webpack-plugin
+babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime @babel/plugin-proposal-decorators @babel/preset-react @babel/preset-typescript
+@types/node @types/react @types/react-dom
+
+
+# 生产依赖
+react react-dom react-router redux
+axios
+
+
+
+
+
+
+
 # 技术栈
 Webpack5 + TypeScript4 + React18 + React-Router6 + Redux4 + Sass + AntDesign
 
@@ -26,6 +68,19 @@ src
   react-app-env.d.ts
   reportWebVitals.ts
 test
+
+# 功能模块设计
+TodoList
+  1.右下角的悬浮+新增一条，回车结束
+  2.列表，每一条，左侧有切换完成按钮，右侧是内容展示，
+
+  输入Todo内容，失去焦点即可添加一条新的Todo Item
+  以列表的形式，展示所有的Todo Item
+  每一条Todo Item，左侧为内容，右侧为功能区（完成、删除、置顶）
+  可以将Todo Item标记为完成，置灰
+  可以将Todo Item删除
+  可以将Todo Item置顶
+
 
 # Babel
 处理JS兼容：把最新的标准语法转换为低版本语法，把非标转为标准语法，才能让浏览器识别解析

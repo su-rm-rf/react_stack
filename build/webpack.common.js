@@ -13,7 +13,7 @@ module.exports = env => {
     output: {
       path: path.resolve(__dirname, '../dist'),
       filename: 'static/js/[name].[chunkhash:8].js',
-      publicPath: pkg.basename
+      publicPath: pkg.publicPath
     },
     module: {
       rules: [

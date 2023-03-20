@@ -7,6 +7,7 @@ module.exports = env => {
     devtool: 'eval-cheap-module-source-map',
     devServer: {
       port: 8101,
+      hot: true,
       historyApiFallback: {
         rewrites: [
           {

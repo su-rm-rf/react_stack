@@ -10,6 +10,7 @@ export default function App() {
       <nav className='nav_header'>
         <NavLink to='/home'>Home</NavLink>
         <NavLink to='/product'>Product</NavLink>
+        <NavLink to='/todolist'>TodoList</NavLink>
         <NavLink to='/about'>About</NavLink>
       </nav>
       <div className='body_content'>

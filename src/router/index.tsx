@@ -9,6 +9,7 @@ import Home from '@/components/Home'
 // import LazyProduct from '@/components/LazyProduct'
 import About from '@/components/About'
 import History from '@/components/History'
+import TodoList from "@/components/TodoList"
 
 interface Router {
   name?: string,
@@ -43,6 +44,10 @@ const routes: Array<Router> = [
         ]
       },
       {
+        path: 'todolist',
+        element: <TodoList />
+      },
+      {
         path: 'about',
         element: <About />,
         children: [
@@ -65,7 +70,7 @@ const routes: Array<Router> = [
 ]
 
 const router = createBrowserRouter(routes, {
-  basename: pkg.basename
+  basename: pkg.publicPath
 })
 
 export default router
