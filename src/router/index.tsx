@@ -30,6 +30,10 @@ const routes: Array<Router> = [
     element: <App />,
     children: [
       {
+        path: '',
+        element: <Home />
+      },
+      {
         path: 'home',
         element: <Home />
       },
